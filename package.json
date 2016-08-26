@@ -1,0 +1,24 @@
+{
+  "name": "dickie-dates",
+  "version": "0.0.0",
+  "description": "dickie-dates implies controlling knowingly imprecise epochs",
+  "main": "index.js",
+  "repository": "guypursey/dickie-dates",
+  "engines": {
+    "node": ">=4.0.* <=4.2.*"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "dates",
+    "parsing",
+    "date-format"
+  ],
+  "author": "Guy Pursey <guypursey@gmail.com>",
+  "license": "ISC"
+}
