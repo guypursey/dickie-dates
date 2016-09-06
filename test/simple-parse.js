@@ -7,7 +7,7 @@ describe("Using `dickie-dates`", function() {
 	describe("to parse a simple string", function () {
 		describe("like `198` to represent the 1980s", function () {
 
-			let result = dickiedates("198")
+			let result = dickiedates.parseDate("198")
 
 			it("should return an object", function () {
 				expect(result).to.be.an("object")
