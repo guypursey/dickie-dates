@@ -2,7 +2,7 @@
 
 > dickie-dates implies controlling knowingly imprecise epochs
 
-v0.0.1
+v0.0.2
 
 An implementation of a simple set of conventions for handling intentionally ambiguous date-time stamps.
 
