@@ -2,7 +2,7 @@
 
 > dickie-dates implies controlling knowingly imprecise epochs
 
-![Version 0.0.4](https://img.shields.io/badge/version-0.0.4-gray.svg)
+![Version 0.1.0](https://img.shields.io/badge/version-0.1.0-gray.svg)
 
 An implementation of a simple set of conventions for handling intentionally ambiguous date-time stamps.
 

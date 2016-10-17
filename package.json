@@ -1,6 +1,6 @@
 {
   "name": "dickie-dates",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "dickie-dates implies controlling knowingly imprecise epochs",
   "main": "index.js",
   "repository": "guypursey/dickie-dates",
