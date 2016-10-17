@@ -39,4 +39,17 @@ describe("Using `dickie-dates`", function() {
 
 		})
 	})
+
+	describe("like `-1000` to represent the year 1000 BCE", function () {
+
+		let result = dickiedates.parseDate("-1000")
+
+		it("should return an object with a `startDate` value of '-10000101000000'", function () {
+			expect(result).to.have.property("startDate", "-10000101000000")
+		})
+
+		it("should return an object with a `endDate` value of '-10001231235959'", function () {
+			expect(result).to.have.property("endDate", "-10001231235959")
+		})
+	})
 })
