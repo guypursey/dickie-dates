@@ -11,41 +11,43 @@ module.exports = {
 			dateInput.endDate = date.endDate || date.startDate
 		}
 
-		var datePattern = /(\d{1,4})(?:(0[1-9]|1[0-2])(?:(0[1-9]|[1-2][0-9]|3[0-1])(?:([0-1][0-9]|2[0-3])(?:([0-5][0-9])(?:([0-5][0-9]))?)?)?)?)?/
+		var datePattern = /(-?)(\d{1,4})(?:(0[1-9]|1[0-2])(?:(0[1-9]|[1-2][0-9]|3[0-1])(?:([0-1][0-9]|2[0-3])(?:([0-5][0-9])(?:([0-5][0-9]))?)?)?)?)?/
 
 		var startDate = datePattern.exec(dateInput.startDate)
 		var endDate = datePattern.exec(dateInput.endDate)
 
-		var startYear = startDate[1]
-				 ? `${startDate[1]}${"0000".substr(startDate[1].length)}`
+		var startEra = startDate[1]
+		var startYear = startDate[2]
+				 ? `${startDate[2]}${"0000".substr(startDate[2].length)}`
 				 : ""
-		var startMonth = startDate[2] || "01"
-		var startDay = startDate[3] || "01"
-		var startHour = startDate[4] || "00"
-		var startMinute = startDate[5] || "00"
-		var startSecond = startDate[6] || "00"
+		var startMonth = startDate[3] || "01"
+		var startDay = startDate[4] || "01"
+		var startHour = startDate[5] || "00"
+		var startMinute = startDate[6] || "00"
+		var startSecond = startDate[7] || "00"
 
-		var endYear = endDate[1]
-				 ? `${endDate[1]}${"9999".substr(endDate[1].length)}`
+		var endEra = endDate[1]
+		var endYear = endDate[2]
+				 ? `${endDate[2]}${"9999".substr(endDate[2].length)}`
 				 : ""
-		var endMonth = endDate[2] || "12"
-		var endDay = endDate[3]
-				   || ((endDate[2] === "02")
-					   ? (endDate[1] % 4 === 0)
+		var endMonth = endDate[3] || "12"
+		var endDay = endDate[4]
+				   || ((endDate[3] === "02")
+					   ? (endDate[2] % 4 === 0)
 						 ? "29"
 						 : "28"
-					   : (/(04|06|09|11)/.test(endDate[2]))
+					   : (/(04|06|09|11)/.test(endDate[1]))
 						 ? "30"
 						 : "31")
-		var endHour = endDate[4] || "23"
-		var endMinute = endDate[5] || "59"
-		var endSecond = endDate[6] || "59"
-		var startDateResult = `${startYear}${startMonth}${startDay}${startHour}${startMinute}${startSecond}`
-		var endDateResult = `${endYear}${endMonth}${endDay}${endHour}${endMinute}${endSecond}`
+		var endHour = endDate[5] || "23"
+		var endMinute = endDate[6] || "59"
+		var endSecond = endDate[7] || "59"
+		var startDateResult = `${startEra}${startYear}${startMonth}${startDay}${startHour}${startMinute}${startSecond}`
+		var endDateResult = `${endEra}${endYear}${endMonth}${endDay}${endHour}${endMinute}${endSecond}`
 
 		var startPrecision = 6
 		while (startPrecision) {
-			if (startDate[startPrecision]) {
+			if (startDate[startPrecision + 1]) {
 				break
 			}
 			startPrecision -= 1
@@ -53,7 +55,7 @@ module.exports = {
 
 		var endPrecision = 6
 		while (endPrecision) {
-			if (startDate[endPrecision]) {
+			if (startDate[endPrecision + 1]) {
 				break
 			}
 			endPrecision -= 1
