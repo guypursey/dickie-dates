@@ -32,3 +32,4 @@ There's not a lot of detailed documentation at the moment, but for what it's wor
  - ["Awkward dates", 20th June 2016](http://guypursey.com/blog/201606201000-awkward-dates)
  - ["Allowing date uncertainty", 27th June 2016](http://guypursey.com/blog/201606271030-allowing-date-uncertainty)
  - ["Playpool chart", 4th July 2016, in which you can see the approach being used](http://guypursey.com/blog/201607042300-playpool-chart)
+ - ["Ancient dates", 17th October 2016](http://guypursey.com/blog/201610172000-ancient-dates)
